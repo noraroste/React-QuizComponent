@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import QuizQuestion from "./QuizQuestion"
 let quizData = require('./quiz_data.json')
 
 class Quiz extends Component{
@@ -10,13 +10,11 @@ class Quiz extends Component{
 
     render(){
         let position = this.state.quiz_position;
-        console.log(position);
-        let resObj = quizData.quiz_questions.find(o=>o.id===position)
+        let resObj = quizData.quiz_questions[position-1];
+        console.log(resObj);
         return(
             <div>
-                <div className="QuizQuestion">
-                    {resObj.instruction_text}
-                </div>
+                <QuizQuestion quiz_questions={resObj}/>
             </div>
         )
     }
