@@ -11,4 +11,5 @@ class QuizQuestionButton extends Component{
         )
     }
 }
+
 export default QuizQuestionButton
